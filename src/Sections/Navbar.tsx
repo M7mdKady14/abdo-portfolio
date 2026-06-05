@@ -1,5 +1,3 @@
-import CardNav from "../components/CardNav";
-
 export function Navbar() {
   return (
     <div className="sticky inset-x-0 -inset-y-4 md:-inset-y-7 z-50">
