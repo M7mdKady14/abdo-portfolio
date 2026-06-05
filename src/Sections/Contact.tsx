@@ -1,12 +1,21 @@
 import AnimatedContent from "../components/AnimatedContent";
 import BorderGlow from "../components/BorderGlow";
 import { email, linkedIn, number, whatsapp } from "../Links";
+import groovePath from "../assets/groove-battle.mp3";
+
+const grooveAudio = new Audio(groovePath);
 
 const titleDelay = 0;
 const contactDelay = 0.4;
 
 export function Contact() {
   const handleSubmit = (formData: FormData) => {
+    if (formData.get("name")?.toString().toLowerCase().includes("groove")) {
+      grooveAudio.currentTime = 0;
+      grooveAudio
+        .play()
+        .catch((error) => console.log("Playback blocked:", error));
+    }
     console.log("supposed to send some stuff I guess", formData.get("name"));
   };
 
