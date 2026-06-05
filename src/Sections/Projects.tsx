@@ -2,6 +2,8 @@ import AnimatedContent from "../components/AnimatedContent";
 import BorderGlow from "../components/BorderGlow";
 import { flexiWebsite, paper } from "../Links";
 
+import flexiVideo from "../assets/flexi.mp4";
+
 type AnimationOptions = {
   direction?: "horizontal" | "vertical";
   reverse?: boolean | undefined;
@@ -26,7 +28,7 @@ const aboutCards: CardData[] = [
     title: "Flexi - AI fitness Coach",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi laboriosam et voluptatum assumenda voluptatem dolorem placeat reiciendis illum a, velit eos laudantium qui consequatur quam suscipit vero aliquid ipsa quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti repudiandae nostrum quisquam cum. Dicta iusto animi rerum vitae nobis ratione",
     className: "md:col-span-2 md:row-span-2",
-    video: "src/assets/flexi.mp4",
+    video: flexiVideo,
     button: flexiWebsite,
     buttonText: "flexi website",
     animation: {

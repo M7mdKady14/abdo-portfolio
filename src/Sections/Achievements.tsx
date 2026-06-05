@@ -1,6 +1,9 @@
 import AnimatedContent from "../components/AnimatedContent";
 import BorderGlow from "../components/BorderGlow";
 
+import HultImage from "../assets/hult.jpeg";
+import ClashOfCodersImage from "../assets/clashOfCoders.jpeg";
+
 const titleDelay = 0;
 const codersDelay = 0.4;
 const hultDelay = 0.4;
@@ -59,7 +62,7 @@ export function Achievements() {
                   doloremque tenetur illum repellat facilis nesciunt! Omnis.
                 </p>
                 <img
-                  src="src/assets/clashOfCoders.jpeg"
+                  src={ClashOfCodersImage}
                   alt=""
                   className="w-full h-130 object-cover rounded-2xl"
                 />
@@ -102,7 +105,7 @@ export function Achievements() {
                   doloremque tenetur illum repellat facilis nesciunt! Omnis.
                 </p>
                 <img
-                  src="src/assets/hult.jpeg"
+                  src={HultImage}
                   alt=""
                   className="w-full h-130 object-cover rounded-2xl"
                 />

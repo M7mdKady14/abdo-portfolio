@@ -1,6 +1,9 @@
 import AnimatedContent from "../components/AnimatedContent";
 import BorderGlow from "../components/BorderGlow";
 
+import CV from "../assets/cv.pdf";
+import profileImage from "../assets/profile.jpg";
+
 const roleDelay = 0;
 const nameDelay = 0.4;
 const pictureDelay = 0.8;
@@ -112,7 +115,7 @@ export function Hero() {
               ease="expo"
             >
               <a
-                href="src/assets/cv.pdf"
+                href={CV}
                 download={"abdelrhman Ahmed CV.pdf"}
                 className="group border border-primary-container text-primary-container px-8 py-4 rounded-lg font-headline-lg text-code-sm font-bold flex items-center gap-4 transition-all hover:bg-primary-container/10 active:scale-95"
               >
@@ -147,11 +150,7 @@ export function Hero() {
               glowIntensity={30}
               className="p-1"
             >
-              <img
-                className="rounded-4xl"
-                src="src/assets/profile.jpg"
-                alt="Profile"
-              />
+              <img className="rounded-4xl" src={profileImage} alt="Profile" />
             </BorderGlow>
           </div>
         </AnimatedContent>
