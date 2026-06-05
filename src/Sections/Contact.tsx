@@ -1,26 +1,35 @@
 import AnimatedContent from "../components/AnimatedContent";
 import BorderGlow from "../components/BorderGlow";
 import { email, linkedIn, number, whatsapp } from "../Links";
-import groovePath from "../assets/groove-battle.mp3";
-
-const grooveAudio = new Audio(groovePath);
+import grooveVideoPath from "../assets/groove-battle.mp4";
+import { useRef, useState } from "react";
 
 const titleDelay = 0;
 const contactDelay = 0.4;
 
 export function Contact() {
+  const [groovePlaying, setGroovePlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const handleSubmit = (formData: FormData) => {
     if (formData.get("name")?.toString().toLowerCase().includes("groove")) {
-      grooveAudio.currentTime = 0;
-      grooveAudio
-        .play()
-        .catch((error) => console.log("Playback blocked:", error));
+      setGroovePlaying(true);
     }
-    console.log("supposed to send some stuff I guess", formData.get("name"));
   };
+
+  const groove = (
+    <video
+      ref={videoRef}
+      src={grooveVideoPath}
+      autoPlay
+      onEnded={() => setGroovePlaying(false)}
+      className="fixed inset-0 w-screen h-screen z-100 object-fill"
+    ></video>
+  );
 
   return (
     <section className="my-48 px-margin-desktop max-w-container-max mx-auto">
+      {groovePlaying && groove}
       <div className="flex flex-col gap-16 items-center">
         <AnimatedContent
           reverse
