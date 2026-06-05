@@ -3,6 +3,7 @@ import BorderGlow from "../components/BorderGlow";
 import { flexiWebsite, paper } from "../Links";
 
 import flexiVideo from "../assets/flexi.mp4";
+import type { ReactNode } from "react";
 
 type AnimationOptions = {
   direction?: "horizontal" | "vertical";
@@ -13,7 +14,7 @@ type AnimationOptions = {
 type CardData = {
   icon: React.ReactNode;
   title: string;
-  text: string;
+  text: string | ReactNode;
   animation?: AnimationOptions;
   className: string;
   video?: string;
@@ -36,7 +37,26 @@ const aboutCards: CardData[] = [
       </svg>
     ),
     title: "Flexi - AI fitness Coach",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi laboriosam et voluptatum assumenda voluptatem dolorem placeat reiciendis illum a, velit eos laudantium qui consequatur quam suscipit vero aliquid ipsa quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti repudiandae nostrum quisquam cum. Dicta iusto animi rerum vitae nobis ratione",
+    text: (
+      <ul className="flex flex-col gap-3">
+        <li>
+          Developed a full-stack AI backend for automated posture analysis and
+          flexibility assessment using pose detection
+        </li>
+        <li>
+          Built a high-performance PostgreSQL layer to store and query
+          biomechanical metrics efficiently
+        </li>
+        <li>
+          Created data pipelines to transform raw pose data into actionable
+          fitness insights
+        </li>
+        <li>
+          Implemented standardized error handling, automated testing with
+          pytest, and optimized API performance.
+        </li>
+      </ul>
+    ),
     className: "md:col-span-2 md:row-span-2",
     video: flexiVideo,
     button: flexiWebsite,
@@ -59,7 +79,26 @@ const aboutCards: CardData[] = [
       </svg>
     ),
     title: "Published Energy AI Research",
-    text: "Co-authored research on photovoltaic power generation forecasting using Bayesian optimization and stacked ensemble learning.",
+    text: (
+      <ul className="flex flex-col gap-3">
+        <li>
+          Performed exploratory data analysis and feature engineering to model
+          solar PV power generation pattern
+        </li>
+        <li>
+          Developed predictive forecasting models using Bayesian optimization
+          and stacked ensemble learning to improve accuracy and robustness
+        </li>
+        <li>
+          Optimized model hyperparameters and evaluated performance across
+          multiple metrics
+        </li>
+        <li>
+          Implemented standardized error handling, automated testing with
+          pytest, and optimized API performance.
+        </li>
+      </ul>
+    ),
     className: "md:col-span-1 md:row-span-2",
     button: "https://doi.org/10.1016/j.rineng.2025.104950",
     buttonIcon: paper,
@@ -82,7 +121,19 @@ const aboutCards: CardData[] = [
       </svg>
     ),
     title: "label it",
-    text: "Comfortable shaping clean applications from interface to logic, connecting strong engineering fundamentals with modern development workflows.",
+    text: (
+      <ul className="flex flex-col gap-3">
+        <li>
+          Built an end-to-end pose estimation pipeline to extract body
+          keypoints, calculate biomechanical joint angles, and detect posture
+          issues in real time
+        </li>
+        <li>
+          Implemented a rule-based posture classification engine and angle-based
+          calculators for exercises such as squats and jumping jacks
+        </li>
+      </ul>
+    ),
     className: "md:col-span-2",
     animation: {
       direction: "vertical",
@@ -102,7 +153,19 @@ const aboutCards: CardData[] = [
       </svg>
     ),
     title: "noteNest",
-    text: "Works with complex datasets, predictive models, and optimization techniques to create systems that can learn patterns and support better decisions.",
+    text: (
+      <ul className="flex flex-col gap-3">
+        <li>
+          Designed and developed a collaborative web platform enabling students
+          and teachers to create, organize, and share notes in secure virtual
+          classrooms
+        </li>
+        <li>
+          Engineered a database-driven backend with optimized MySQL schema
+          design, migrations, and efficient query handling
+        </li>
+      </ul>
+    ),
     className: "md:col-span-1",
     animation: {
       direction: "horizontal",
@@ -168,9 +231,9 @@ export function Projects() {
                         {card.icon}
                       </span>
                     </div>
-                    <p className="max-w-xl text-base leading-relaxed text-slate-300">
+                    <div className="max-w-xl text-base leading-relaxed text-slate-300">
                       {card.text}
-                    </p>
+                    </div>
                     {card.button && (
                       <a
                         className="bg-cyan-400 text-slate-900 px-10 py-4 mt-auto rounded-2xl font-headline-lg text-lg font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:scale-95"
