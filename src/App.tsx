@@ -10,7 +10,7 @@ import PixelBlast from "./components/PixelPlast";
 function App() {
   return (
     <>
-      <div className="scroll-container relative w-full h-screen overflow-y-scroll">
+      <div className="scroll-container">
         {/* Background layer */}
         <div className="fixed inset-0 -z-20">
           {/* <LetterGlitch
@@ -40,8 +40,8 @@ function App() {
             variant="diamond"
             pixelSize={4}
             color="#0c4a6e"
-            patternScale={0.5}
-            patternDensity={1.4}
+            patternScale={1}
+            patternDensity={1.5}
             pixelSizeJitter={0.75}
             enableRipples={false}
             rippleSpeed={0.4}
@@ -51,7 +51,7 @@ function App() {
             liquidStrength={0.12}
             liquidRadius={1.2}
             liquidWobbleSpeed={5}
-            speed={2.45}
+            speed={0.15}
             edgeFade={0.12}
             transparent
           />

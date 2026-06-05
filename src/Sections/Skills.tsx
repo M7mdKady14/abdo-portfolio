@@ -114,7 +114,11 @@ export function Skills() {
                 </li>
               </ul>
               <div className="overflow-hidden object-fill max-w-3xl">
-                <ScrollVelocity texts={techLogos} />
+                <ScrollVelocity
+                  scrollerClassName="scroll-container"
+                  numCopies={10}
+                  texts={techLogos}
+                />
               </div>
             </div>
           </BorderGlow>
