@@ -17,7 +17,6 @@ export function Hero() {
       <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full flex items-center lg:flex-row flex-col gap-8 justify-center">
         <div className="max-w-3xl items-center flex flex-col ">
           <AnimatedContent
-            container={".scroll-container"}
             reverse
             distance={40}
             duration={1.2}
@@ -29,7 +28,6 @@ export function Hero() {
             </span>
           </AnimatedContent>
           <AnimatedContent
-            container={".scroll-container"}
             reverse
             distance={40}
             duration={1.2}
@@ -44,7 +42,6 @@ export function Hero() {
             </h1>
           </AnimatedContent>
           <AnimatedContent
-            container={".scroll-container"}
             reverse
             direction="horizontal"
             distance={50}
@@ -72,7 +69,6 @@ export function Hero() {
           </AnimatedContent>
           <div className="flex flex-wrap gap-4 justify-center">
             <AnimatedContent
-              container={".scroll-container"}
               reverse
               direction="horizontal"
               distance={40}
@@ -106,7 +102,6 @@ export function Hero() {
               </a>
             </AnimatedContent>
             <AnimatedContent
-              container={".scroll-container"}
               direction="horizontal"
               distance={40}
               duration={1.2}
@@ -135,7 +130,6 @@ export function Hero() {
           </div>
         </div>
         <AnimatedContent
-          container={".scroll-container"}
           direction="horizontal"
           distance={80}
           duration={1.2}

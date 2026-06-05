@@ -53,7 +53,6 @@ export function Skills() {
       <div className="flex flex-col gap-16 items-center">
         <AnimatedContent
           reverse
-          container={".scroll-container"}
           direction="vertical"
           distance={40}
           duration={1.2}
@@ -65,7 +64,6 @@ export function Skills() {
         </AnimatedContent>
         <AnimatedContent
           reverse
-          container={".scroll-container"}
           direction="vertical"
           distance={40}
           duration={1.2}
@@ -114,11 +112,7 @@ export function Skills() {
                 </li>
               </ul>
               <div className="overflow-hidden object-fill max-w-3xl">
-                <ScrollVelocity
-                  scrollerClassName="scroll-container"
-                  numCopies={10}
-                  texts={techLogos}
-                />
+                <ScrollVelocity numCopies={10} texts={techLogos} />
               </div>
             </div>
           </BorderGlow>

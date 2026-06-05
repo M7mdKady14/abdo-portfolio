@@ -122,7 +122,6 @@ export function Projects() {
       <div className="flex flex-col gap-16 items-center">
         <AnimatedContent
           reverse
-          container={".scroll-container"}
           direction="vertical"
           distance={40}
           duration={1.2}
@@ -136,7 +135,6 @@ export function Projects() {
           {aboutCards.map((card) => (
             <AnimatedContent
               key={card.title}
-              container={".scroll-container"}
               distance={60}
               duration={1.3}
               initialOpacity={0.0}

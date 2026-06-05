@@ -14,7 +14,6 @@ export function Achievements() {
       <div className="flex flex-col gap-8 items-center">
         <AnimatedContent
           reverse
-          container={".scroll-container"}
           direction="vertical"
           distance={40}
           duration={1.2}
@@ -27,7 +26,6 @@ export function Achievements() {
         <div className="flex flex-col gap-8 md:flex-row">
           <AnimatedContent
             reverse
-            container={".scroll-container"}
             direction="horizontal"
             distance={40}
             duration={1.2}
@@ -74,7 +72,6 @@ export function Achievements() {
             </BorderGlow>
           </AnimatedContent>
           <AnimatedContent
-            container={".scroll-container"}
             direction="horizontal"
             distance={40}
             duration={1.2}

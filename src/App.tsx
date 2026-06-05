@@ -10,7 +10,7 @@ import PixelBlast from "./components/PixelPlast";
 function App() {
   return (
     <>
-      <div className="scroll-container">
+      <div className="">
         {/* Background layer */}
         <div className="fixed inset-0 -z-20">
           {/* <LetterGlitch
