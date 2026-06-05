@@ -137,7 +137,7 @@ export function Contact() {
                         Name
                       </label>
                       <input
-                        className="w-full bg-surface-container-lowest border-glass-border rounded-lg text-on-surface focus:ring-primary-container focus:border-primary-container px-4 py-3 transition-all"
+                        className="w-full bg-surface-container-lowest rounded-lg text-on-surface px-4 py-3 transition-all"
                         placeholder="John Doe"
                         name="name"
                         type="text"
@@ -148,7 +148,7 @@ export function Contact() {
                         Email
                       </label>
                       <input
-                        className="w-full bg-surface-container-lowest border-glass-border rounded-lg text-on-surface focus:ring-primary-container focus:border-primary-container px-4 py-3 transition-all"
+                        className="w-full bg-surface-container-lowest rounded-lg text-on-surface px-4 py-3 transition-all"
                         placeholder="john@example.com"
                         type="email"
                         name="email"
@@ -159,7 +159,7 @@ export function Contact() {
                         Message
                       </label>
                       <textarea
-                        className="w-full bg-surface-container-lowest border-glass-border rounded-lg text-on-surface focus:ring-primary-container focus:border-primary-container px-4 py-3 transition-all"
+                        className="w-full bg-surface-container-lowest rounded-lg text-on-surface px-4 py-3 transition-all"
                         placeholder="Tell me what's on your mind..."
                         rows={4}
                         defaultValue={""}

@@ -145,10 +145,13 @@ export function Hero() {
         >
           <div className="h-max shrink-0 w-100">
             <BorderGlow
-              animated={true}
-              glowColor="oklch(88.2% 0.059 254.128)"
-              glowIntensity={30}
-              className="p-1"
+              className={`h-full w-full flex flex-col group hover:-translate-y-1 duration-300`}
+              backgroundColor="oklch(12.9% 0.042 264.695 / 75%)"
+              coneSpread={5}
+              glowIntensity={2}
+              glowColor="200.56 97.87 85.94"
+              edgeSensitivity={-8888}
+              colors={[]}
             >
               <img className="rounded-4xl" src={profileImage} alt="Profile" />
             </BorderGlow>

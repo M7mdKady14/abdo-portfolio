@@ -1,12 +1,10 @@
 import { Footer } from "./Sections/Footer";
-import LetterGlitch from "./components/LetterGlitch";
 import { Achievements } from "./Sections/Achievements";
 import { Contact } from "./Sections/Contact";
 import { Hero } from "./Sections/Hero";
 import { Navbar } from "./Sections/Navbar";
 import { Projects } from "./Sections/Projects";
 import { Skills } from "./Sections/Skills";
-import LightRays from "./components/LightRays";
 import PixelBlast from "./components/PixelPlast";
 
 function App() {
@@ -43,7 +41,7 @@ function App() {
             pixelSize={4}
             color="#0c4a6e"
             patternScale={0.5}
-            patternDensity={1.2}
+            patternDensity={1.4}
             pixelSizeJitter={0.75}
             enableRipples={false}
             rippleSpeed={0.4}
