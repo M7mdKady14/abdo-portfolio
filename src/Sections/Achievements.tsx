@@ -10,7 +10,7 @@ const hultDelay = 0.4;
 
 export function Achievements() {
   return (
-    <section className="my-24 px-margin-desktop max-w-container-max mx-auto">
+    <section className="my-36 px-margin-desktop max-w-container-max mx-auto">
       <div className="flex flex-col gap-8 items-center">
         <AnimatedContent
           reverse
@@ -19,7 +19,7 @@ export function Achievements() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.5}
+          threshold={0.3}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">My Achievements</h2>
@@ -32,7 +32,7 @@ export function Achievements() {
             distance={40}
             duration={1.2}
             initialOpacity={0.0}
-            threshold={0.5}
+            threshold={0.3}
             delay={codersDelay}
           >
             <BorderGlow
@@ -75,7 +75,7 @@ export function Achievements() {
             distance={40}
             duration={1.2}
             initialOpacity={0.0}
-            threshold={0.5}
+            threshold={0.3}
             delay={hultDelay}
           >
             <BorderGlow

@@ -20,7 +20,7 @@ export function Contact() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.5}
+          threshold={0.3}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">Contact</h2>
@@ -32,7 +32,7 @@ export function Contact() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.5}
+          threshold={0.3}
           delay={contactDelay}
         >
           <BorderGlow
@@ -117,11 +117,11 @@ export function Contact() {
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-12 h-12 group/whatsapp flex items-center justify-center fill-slate-100 hover:fill-green-400 rounded-2xl duration-300"
                       >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                         <g
                           id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></g>
                         <g id="SVGRepo_iconCarrier">
                           {" "}

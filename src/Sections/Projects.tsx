@@ -66,7 +66,7 @@ const aboutCards: CardData[] = [
     className: "md:col-span-1",
     animation: {
       direction: "horizontal",
-      threshold: 0.2,
+      threshold: 0.1,
     },
   },
 ];
@@ -76,7 +76,7 @@ const titleDelay = 0;
 export function Projects() {
   return (
     <section
-      className="my-48 px-margin-desktop max-w-container-max mx-auto"
+      className="my-36 px-margin-desktop max-w-container-max mx-auto"
       id="projects"
     >
       <div className="flex flex-col gap-16 items-center">
@@ -87,7 +87,7 @@ export function Projects() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.5}
+          threshold={0.2}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">My Projects</h2>
@@ -100,7 +100,7 @@ export function Projects() {
               distance={60}
               duration={1.3}
               initialOpacity={0.0}
-              threshold={0.5}
+              threshold={0.2}
               delay={0.2}
               className={`${card.className}`}
               {...card.animation}
