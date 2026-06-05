@@ -60,7 +60,9 @@ export function Skills() {
           threshold={0.3}
           delay={titleDelay}
         >
-          <h2 className="text-4xl text-slate-300 font-bold">My Skills</h2>
+          <h2 className="text-4xl text-slate-300 font-bold">
+            Skills And Experience
+          </h2>
         </AnimatedContent>
         <AnimatedContent
           reverse
@@ -80,35 +82,36 @@ export function Skills() {
             edgeSensitivity={-8888}
             colors={[]}
           >
-            <div className="flex gap-15 flex-col lg:flex-row">
+            <div className="flex gap-5 flex-col lg:flex-row">
               <ul className="text-lg leading-relaxed text-slate-300 flex flex-col gap-3 min-w-md text-center lg:text-start">
-                <li>
-                  <span className="text-cyan-400 font-bold text-xl">
-                    Lorem ipsum
-                  </span>{" "}
-                  dolor sit amet, consectetur adipisicing elit. Architecto,
-                  perspiciatis.
+                <li className="flex gap-3 flex-col">
+                  <div className="flex justify-between items-end">
+                    <p className="text-cyan-400 font-bold text-xl">
+                      Software Engineer at CareCode
+                    </p>
+                    <span className="text-sm text-slate-300">
+                      2024 - present
+                    </span>
+                  </div>
+                  <p>
+                    responsible for computer vision tasks and the AI model
+                    training and refining.
+                  </p>
                 </li>
-                <li>
-                  <span className="text-cyan-400 font-bold text-xl">
-                    Lorem ipsum
-                  </span>{" "}
-                  dolor sit amet, consectetur adipisicing elit. Architecto,
-                  perspiciatis.
-                </li>
-                <li>
-                  <span className="text-cyan-400 font-bold text-xl">
-                    Lorem ipsum
-                  </span>{" "}
-                  dolor sit amet, consectetur adipisicing elit. Architecto,
-                  perspiciatis.
-                </li>
-                <li>
-                  <span className="text-cyan-400 font-bold text-xl">
-                    Lorem ipsum
-                  </span>{" "}
-                  dolor sit amet, consectetur adipisicing elit. Architecto,
-                  perspiciatis.
+                <li className="flex gap-3 flex-col">
+                  <div className="flex justify-between items-end">
+                    <p className="text-cyan-400 font-bold text-xl">
+                      Bachelor of Science in Computer at Suez University
+                    </p>
+                    <span className="text-sm text-slate-300 min-w-25">
+                      2024 - present
+                    </span>
+                  </div>
+                  <p>
+                    Current GPA: 3.56 / 4.00 (
+                    <span className="text-cyan-300">Very Good</span>) | Third
+                    year
+                  </p>
                 </li>
               </ul>
               <div className="overflow-hidden object-fill max-w-3xl">

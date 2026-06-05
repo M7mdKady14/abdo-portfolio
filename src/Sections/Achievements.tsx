@@ -45,7 +45,7 @@ export function Achievements() {
               <div className="flex min-w-0 flex-1 flex-col gap-8">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-slate-100 group-hover:text-cyan-400 duration-300">
-                    Clash of Coders 1st Place
+                    Clash of Codes 1st Place
                   </h3>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -58,10 +58,10 @@ export function Achievements() {
                   </svg>
                 </div>
                 <p className="max-w-xl text-base leading-relaxed text-slate-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  obcaecati, inventore nobis expedita, consectetur eaque magni
-                  ut delectus architecto, praesentium molestiae omnis quasi
-                  doloremque tenetur illum repellat facilis nesciunt! Omnis.
+                  Entered the Clash of Codes 2026, hosted at the Higher
+                  Technological Institute and came out on top. We secured 1st
+                  place in the data science track together with my two friends
+                  Ali Elkline and Mohammad Sherif
                 </p>
                 <img
                   src={ClashOfCodersImage}
@@ -104,10 +104,9 @@ export function Achievements() {
                   </svg>
                 </div>
                 <p className="max-w-xl text-base leading-relaxed text-slate-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  obcaecati, inventore nobis expedita, consectetur eaque magni
-                  ut delectus architecto, praesentium molestiae omnis quasi
-                  doloremque tenetur illum repellat facilis nesciunt! Omnis.
+                  Entered the hult Prize final for Egypt for the year 2024 as my
+                  first year in university and managed to achieve the incredibly
+                  hard 2nd place spot.
                 </p>
                 <img
                   src={HultImage}
