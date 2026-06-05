@@ -24,7 +24,6 @@ export function Contact() {
       <div className="flex flex-col gap-16 items-center">
         <AnimatedContent
           reverse
-          container={".scroll-container"}
           direction="vertical"
           distance={40}
           duration={1.2}
@@ -36,7 +35,6 @@ export function Contact() {
         </AnimatedContent>
         <AnimatedContent
           reverse
-          container={".scroll-container"}
           direction="vertical"
           distance={40}
           duration={1.2}
