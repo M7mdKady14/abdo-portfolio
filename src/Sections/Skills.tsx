@@ -62,7 +62,7 @@ export function Skills() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.3}
+          threshold={0.2}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">
@@ -75,7 +75,7 @@ export function Skills() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.3}
+          threshold={0.2}
           delay={skillsDelay}
         >
           <BorderGlow

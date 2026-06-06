@@ -226,7 +226,7 @@ export function Projects() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.2}
+          threshold={0.1}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">My Projects</h2>
@@ -238,7 +238,7 @@ export function Projects() {
               distance={60}
               duration={1.3}
               initialOpacity={0.0}
-              threshold={0.2}
+              threshold={0.1}
               delay={0.2}
               className={`${card.className}`}
               {...card.animation}
@@ -257,7 +257,7 @@ export function Projects() {
                     card.video ? "flex-col md:flex-row" : "flex-col"
                   }`}
                 >
-                  <div className="flex min-w-0 flex-1 flex-col gap-8">
+                  <div className="flex flex-1 flex-col gap-8">
                     <div className="flex items-start justify-between gap-4">
                       <h3 className="text-xl font-semibold text-slate-100 group-hover:text-cyan-400 duration-300">
                         {card.title}

@@ -59,7 +59,7 @@ export function Hero() {
               edgeSensitivity={-8888}
               colors={[]}
             >
-              <p className="font-body-lg text-center text-body-lg text-slate-300 leading-relaxed max-w-2x">
+              <p className="font-body-lg text-center text-body-lg text-slate-300 leading-relaxed max-w-2xl">
                 A dedicated software engineer specializing in artificial
                 intelligence and machine learning. Transforming complex data
                 into intelligent, high-performance software solutions for
@@ -137,7 +137,7 @@ export function Hero() {
           delay={pictureDelay}
           ease="expo"
         >
-          <div className="h-max shrink-0 w-100">
+          <div className="h-max shrink-0 md:w-100 w-70">
             <BorderGlow
               className={`h-full w-full flex flex-col group hover:-translate-y-1 duration-300`}
               backgroundColor="oklch(12.9% 0.042 264.695 / 75%)"

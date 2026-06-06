@@ -18,7 +18,7 @@ export function Achievements() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.3}
+          threshold={0.2}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">My Achievements</h2>
@@ -30,7 +30,7 @@ export function Achievements() {
             distance={40}
             duration={1.2}
             initialOpacity={0.0}
-            threshold={0.3}
+            threshold={0.2}
             delay={codersDelay}
           >
             <BorderGlow
@@ -42,7 +42,7 @@ export function Achievements() {
               edgeSensitivity={-8888}
               colors={[]}
             >
-              <div className="flex min-w-0 flex-1 flex-col gap-8">
+              <div className="flex flex-1 flex-col gap-8">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-slate-100 group-hover:text-cyan-400 duration-300">
                     Clash of Codes 1st Place
@@ -57,7 +57,7 @@ export function Achievements() {
                     <path d="M280-120v-80h160v-124q-49-11-87.5-41.5T296-442q-75-9-125.5-65.5T120-640v-40q0-33 23.5-56.5T200-760h80v-80h400v80h80q33 0 56.5 23.5T840-680v40q0 76-50.5 132.5T664-442q-18 46-56.5 76.5T520-324v124h160v80H280Zm0-408v-152h-80v40q0 38 22 68.5t58 43.5Zm285 93q35-35 35-85v-240H360v240q0 50 35 85t85 35q50 0 85-35Zm115-93q36-13 58-43.5t22-68.5v-40h-80v152Zm-200-52Z" />
                   </svg>
                 </div>
-                <p className="max-w-xl text-base leading-relaxed text-slate-300 min-h-30">
+                <p className="max-w-lg text-base leading-relaxed text-slate-300 min-h-30">
                   Entered the Clash of Codes 2026, hosted at the Higher
                   Technological Institute and came out on top. We secured 1st
                   place in the data science track together with my two friends
@@ -78,7 +78,7 @@ export function Achievements() {
             distance={40}
             duration={1.2}
             initialOpacity={0.0}
-            threshold={0.3}
+            threshold={0.2}
             delay={hultDelay}
           >
             <BorderGlow
@@ -90,7 +90,7 @@ export function Achievements() {
               edgeSensitivity={-8888}
               colors={[]}
             >
-              <div className="flex min-w-0 flex-1 flex-col gap-8">
+              <div className="flex flex-1 flex-col gap-8">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-slate-100 group-hover:text-cyan-400 duration-300">
                     Hult Prize 2nd Place

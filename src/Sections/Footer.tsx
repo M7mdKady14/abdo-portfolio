@@ -2,8 +2,8 @@ import { email, github, linkedIn } from "../Links";
 
 export function Footer() {
   return (
-    <footer className="w-full py-4 border-t border-glass-border bg-surface-container-lowest dark:bg-surface-container-lowest">
-      <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-gutter max-w-container-max mx-auto">
+    <footer className="py-4 border-t border-glass-border bg-surface-container-lowest dark:bg-surface-container-lowest">
+      <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-gutter max-w-container-max">
         <p className="font-code-sm text-code-sm text-on-surface-variant">
           © 2026 made by Mohammad Kady.
         </p>

@@ -12,9 +12,9 @@ const PixelBlast = lazy(() => import("./components/PixelPlast"));
 function App() {
   return (
     <>
-      <div className="">
+      <div className="overflow-hidden">
         {/* Background layer */}
-        <div className="fixed inset-0 -z-20">
+        <div className="fixed inset-0 -z-20 overflow-hidden max-w-screen">
           {/* <LetterGlitch
             glitchSpeed={80}
             centerVignette={true}
@@ -41,7 +41,7 @@ function App() {
           <Suspense fallback={null}>
             <PixelBlast
               variant="diamond"
-              pixelSize={4}
+              pixelSize={8}
               color="#0c4a6e"
               patternScale={1}
               patternDensity={1.5}

@@ -37,7 +37,7 @@ export function Contact() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.3}
+          threshold={0.2}
           delay={titleDelay}
         >
           <h2 className="text-4xl text-slate-300 font-bold">Contact</h2>
@@ -48,7 +48,7 @@ export function Contact() {
           distance={40}
           duration={1.2}
           initialOpacity={0.0}
-          threshold={0.3}
+          threshold={0.2}
           delay={contactDelay}
         >
           <BorderGlow
@@ -60,7 +60,7 @@ export function Contact() {
             edgeSensitivity={-8888}
             colors={[]}
           >
-            <div className="flex min-w-0 flex-1 gap-8">
+            <div className="flex flex-1 gap-8">
               {/* Background Decoration */}
               <div className="flex flex-col lg:flex-row justify-between gap-16 relative z-10">
                 <div className="flex flex-col gap-6 ">
@@ -147,7 +147,7 @@ export function Contact() {
                       </svg>
                     </a>
                   </div>
-                  <form className="space-y-6 min-w-md" action={handleSubmit}>
+                  <form className="space-y-6" action={handleSubmit}>
                     <div>
                       <label className="font-label-caps text-label-caps text-on-surface-variant mb-2 block">
                         Name
