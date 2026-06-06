@@ -1,11 +1,10 @@
-import ScrollVelocity from "../components/ScrollVelocity";
+// import ScrollVelocity from "../components/ScrollVelocity";
 import BorderGlow from "../components/BorderGlow";
 import AnimatedContent from "../components/AnimatedContent";
 
 const skills: string[] = [
   "python",
   "git",
-  "js",
   "tensorflow",
   "flask",
   "fastapi",
@@ -19,37 +18,43 @@ const skills: string[] = [
 ];
 
 const Bar = (
-  <div className="flex">
+  <div className="grid gap-2 grid-cols-4 md:grid-cols-6 lg:grid-cols-12 place-items-center">
     {skills.map((skill) => (
       <img
         key={skill}
         src={`https://skillicons.dev/icons?i=${skill}`}
-        className="h-20 mx-4"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className="h-10"
       />
     ))}
   </div>
 );
 
-const BarReversed = (
-  <div className="flex">
-    {skills.reverse().map((skill) => (
-      <img
-        key={skill}
-        src={`https://skillicons.dev/icons?i=${skill}`}
-        className="h-20 mx-4"
-      />
-    ))}
-  </div>
-);
+// const BarReversed = (
+//   <div className="flex">
+//     {[...skills].reverse().map((skill) => (
+//       <img
+//         key={skill}
+//         src={`https://skillicons.dev/icons?i=${skill}`}
+//         alt=""
+//         loading="lazy"
+//         decoding="async"
+//         className="h-20 mx-4"
+//       />
+//     ))}
+//   </div>
+// );
 
-const techLogos = [Bar, BarReversed];
+// const techLogos = [Bar, BarReversed];
 
 const titleDelay = 0;
 const skillsDelay = 0.4;
 
 export function Skills() {
   return (
-    <section className="my-36 px-margin-desktop max-w-container-max mx-auto">
+    <section className="my-36 px-margin-mobile lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="flex flex-col gap-16 items-center">
         <AnimatedContent
           reverse
@@ -82,8 +87,8 @@ export function Skills() {
             edgeSensitivity={-8888}
             colors={[]}
           >
-            <div className="flex gap-5 flex-col lg:flex-row">
-              <ul className="text-lg leading-relaxed text-slate-300 flex flex-col gap-3 min-w-md text-center lg:text-start">
+            <div className="flex gap-5 flex-col">
+              <ul className="text-lg leading-relaxed text-slate-300 flex flex-col gap-3 text-center lg:text-start">
                 <li className="flex gap-3 flex-col">
                   <div className="flex justify-between items-end">
                     <p className="text-cyan-400 font-bold text-xl">
@@ -103,7 +108,7 @@ export function Skills() {
                     <p className="text-cyan-400 font-bold text-xl">
                       Bachelor of Science in Computer at Suez University
                     </p>
-                    <span className="text-sm text-slate-300 min-w-25">
+                    <span className="text-sm text-slate-300">
                       2024 - present
                     </span>
                   </div>
@@ -114,9 +119,10 @@ export function Skills() {
                   </p>
                 </li>
               </ul>
-              <div className="overflow-hidden object-fill max-w-3xl">
+              <div>{Bar}</div>
+              {/* <div className="overflow-hidden object-fill max-w-3xl">
                 <ScrollVelocity numCopies={10} texts={techLogos} />
-              </div>
+              </div> */}
             </div>
           </BorderGlow>
         </AnimatedContent>

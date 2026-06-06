@@ -28,7 +28,7 @@ export function Contact() {
   );
 
   return (
-    <section className="my-48 px-margin-desktop max-w-container-max mx-auto">
+    <section className="my-48 px-margin-mobile lg:px-margin-desktop max-w-container-max mx-auto">
       {groovePlaying && groove}
       <div className="flex flex-col gap-16 items-center">
         <AnimatedContent

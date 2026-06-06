@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState } from "react";
+import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
 import {
   motion,
   useScroll,
@@ -91,6 +91,9 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     parallaxStyle,
     scrollerStyle,
   }: VelocityTextProps) {
+    const parallaxRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
     const baseX = useMotionValue(0);
     const scrollOptions = scrollContainerRef
       ? { container: scrollContainerRef }
@@ -123,7 +126,35 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     });
 
     const directionFactor = useRef<number>(1);
+
+    useEffect(() => {
+      const element = parallaxRef.current;
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => setIsVisible(entry.isIntersecting),
+        { rootMargin: "150px 0px", threshold: 0 },
+      );
+
+      observer.observe(element);
+
+      return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const updatePreference = () =>
+        setPrefersReducedMotion(mediaQuery.matches);
+
+      updatePreference();
+      mediaQuery.addEventListener("change", updatePreference);
+
+      return () => mediaQuery.removeEventListener("change", updatePreference);
+    }, []);
+
     useAnimationFrame((_t, delta) => {
+      if (!isVisible || prefersReducedMotion) return;
+
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
       if (velocityFactor.get() < 0) {
@@ -140,7 +171,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     for (let i = 0; i < (numCopies ?? 6); i++) {
       spans.push(
         <span
-          className={`flex-shrink-0 ${className}`}
+          className={`shrink-0 ${className}`}
           key={i}
           ref={i === 0 ? copyRef : null}
         >
@@ -151,6 +182,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
 
     return (
       <div
+        ref={parallaxRef}
         className={`${parallaxClassName} relative overflow-hidden`}
         style={parallaxStyle}
       >

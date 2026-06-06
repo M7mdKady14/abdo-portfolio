@@ -5,7 +5,9 @@ import { Hero } from "./Sections/Hero";
 import { Navbar } from "./Sections/Navbar";
 import { Projects } from "./Sections/Projects";
 import { Skills } from "./Sections/Skills";
-import PixelBlast from "./components/PixelPlast";
+import { lazy, Suspense } from "react";
+
+const PixelBlast = lazy(() => import("./components/PixelPlast"));
 
 function App() {
   return (
@@ -36,25 +38,27 @@ function App() {
             fadeDistance={1}
             saturation={1}
           /> */}
-          <PixelBlast
-            variant="diamond"
-            pixelSize={4}
-            color="#0c4a6e"
-            patternScale={1}
-            patternDensity={1.5}
-            pixelSizeJitter={0.75}
-            enableRipples={false}
-            rippleSpeed={0.4}
-            rippleThickness={0.12}
-            rippleIntensityScale={1.5}
-            liquid={false}
-            liquidStrength={0.12}
-            liquidRadius={1.2}
-            liquidWobbleSpeed={5}
-            speed={0.15}
-            edgeFade={0.12}
-            transparent
-          />
+          <Suspense fallback={null}>
+            <PixelBlast
+              variant="diamond"
+              pixelSize={4}
+              color="#0c4a6e"
+              patternScale={1}
+              patternDensity={1.5}
+              pixelSizeJitter={0.75}
+              enableRipples={false}
+              rippleSpeed={0.4}
+              rippleThickness={0.12}
+              rippleIntensityScale={1.5}
+              liquid={false}
+              liquidStrength={0.12}
+              liquidRadius={1.2}
+              liquidWobbleSpeed={5}
+              speed={0.15}
+              edgeFade={0.12}
+              transparent
+            />
+          </Suspense>
         </div>
         <div className="container-max mx-auto relative">
           <Navbar />

@@ -14,7 +14,7 @@ const contactDelay = 1.5;
 export function Hero() {
   return (
     <section className="relative flex items-center pt-36 overflow-hidden text-center">
-      <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full flex items-center lg:flex-row flex-col gap-8 justify-center">
+      <div className="relative z-10 px-margin-mobile lg:px-margin-desktop max-w-container-max mx-auto w-full flex items-center lg:flex-row flex-col gap-8 justify-center">
         <div className="max-w-3xl items-center flex flex-col ">
           <AnimatedContent
             reverse
@@ -147,7 +147,13 @@ export function Hero() {
               edgeSensitivity={-8888}
               colors={[]}
             >
-              <img className="rounded-4xl" src={profileImage} alt="Profile" />
+              <img
+                className="rounded-4xl"
+                src={profileImage}
+                alt="Profile"
+                decoding="async"
+                fetchPriority="high"
+              />
             </BorderGlow>
           </div>
         </AnimatedContent>

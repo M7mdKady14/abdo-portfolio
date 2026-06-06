@@ -3,6 +3,7 @@ import BorderGlow from "../components/BorderGlow";
 import { flexiWebsite, paper } from "../Links";
 
 import flexiVideo from "../assets/flexi.mp4";
+import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 
 type AnimationOptions = {
@@ -176,10 +177,46 @@ const aboutCards: CardData[] = [
 
 const titleDelay = 0;
 
+function ProjectVideo({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          void video.play().catch(() => undefined);
+        } else {
+          video.pause();
+        }
+      },
+      { rootMargin: "200px 0px", threshold: 0.1 },
+    );
+
+    observer.observe(video);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      className="aspect-video h-130 shrink-0"
+    />
+  );
+}
+
 export function Projects() {
   return (
     <section
-      className="my-36 px-margin-desktop max-w-container-max mx-auto"
+      className="my-36 px-margin-mobile lg:px-margin-desktop max-w-container-max mx-auto"
       id="projects"
     >
       <div className="flex flex-col gap-16 items-center">
@@ -248,14 +285,7 @@ export function Projects() {
                   </div>
                   {card.video && (
                     <div className="w-full overflow-hidden rounded-4xl border border-white/10 bg-slate-950/40 md:w-[44%]">
-                      <video
-                        src={card.video}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="aspect-video h-130 shrink-0"
-                      ></video>
+                      <ProjectVideo src={card.video} />
                     </div>
                   )}
                 </div>

@@ -161,6 +161,8 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
 
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
+      if (e.pointerType !== "mouse") return;
+
       const card = cardRef.current;
       if (!card) return;
 

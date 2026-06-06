@@ -354,6 +354,24 @@ void main(){
 
 const MAX_CLICKS = 10;
 
+function getOptimizedPixelRatio() {
+  const pixelRatio = window.devicePixelRatio || 1;
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  return Math.min(pixelRatio, isCoarsePointer ? 1 : 1.5);
+}
+
+function getTargetFrameInterval() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return 1000 / 15;
+  }
+
+  if (window.matchMedia("(pointer: coarse)").matches) {
+    return 1000 / 30;
+  }
+
+  return 1000 / 45;
+}
+
 const PixelBlast: React.FC<PixelBlastProps> = ({
   variant = "square",
   pixelSize = 3,
@@ -415,6 +433,23 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
     liquidEffect?: Effect;
   } | null>(null);
   const prevConfigRef = useRef<ReinitConfig | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || !autoPauseOffscreen) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visibilityRef.current.visible = entry.isIntersecting;
+      },
+      { rootMargin: "150px 0px", threshold: 0 },
+    );
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, [autoPauseOffscreen]);
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -457,7 +492,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       });
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setPixelRatio(getOptimizedPixelRatio());
       container.appendChild(renderer.domElement);
       if (transparent) renderer.setClearAlpha(0);
       else renderer.setClearColor(0x000000, 1);
@@ -501,6 +536,7 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
       const setSize = () => {
         const w = container.clientWidth || 1;
         const h = container.clientHeight || 1;
+        renderer.setPixelRatio(getOptimizedPixelRatio());
         renderer.setSize(w, h, false);
         uniforms.uResolution.value.set(
           renderer.domElement.width,
@@ -601,11 +637,18 @@ const PixelBlast: React.FC<PixelBlastProps> = ({
         passive: true,
       });
       let raf: number;
-      const animate = () => {
+      let lastFrameTime = 0;
+      const targetFrameInterval = getTargetFrameInterval();
+      const animate = (frameTime = 0) => {
         if (autoPauseOffscreen && !visibilityRef.current.visible) {
           raf = requestAnimationFrame(animate);
           return;
         }
+        if (frameTime - lastFrameTime < targetFrameInterval) {
+          raf = requestAnimationFrame(animate);
+          return;
+        }
+        lastFrameTime = frameTime;
         uniforms.uTime.value =
           timeOffset + clock.getElapsedTime() * speedRef.current;
         if (liquidEffect) {
