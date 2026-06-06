@@ -5,7 +5,7 @@ export const github = "https://github.com/aabdelrhmann1";
 
 export const email = "bodyworking1@gmail.com";
 
-export const flexiWebsite = "flexi-app.fit";
+export const flexiWebsite = "https://flexi-app.fit";
 
 export const paper =
   "https://sdfestaticassets-eu-west-1.sciencedirectassets.com/shared-assets/24/images/elsevier-non-solus-new-grey.svg";
